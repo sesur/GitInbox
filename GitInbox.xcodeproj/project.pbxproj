@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C91A681D2B31DD750030A650 /* FirstTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91A681C2B31DD750030A650 /* FirstTests.swift */; };
 		C9B2E24F2B31A8560030DDFE /* GitInboxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2E24E2B31A8560030DDFE /* GitInboxApp.swift */; };
 		C9B2E2512B31A8560030DDFE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2E2502B31A8560030DDFE /* ContentView.swift */; };
 		C9B2E2532B31A8590030DDFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9B2E2522B31A8590030DDFE /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C91A681C2B31DD750030A650 /* FirstTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTests.swift; sourceTree = "<group>"; };
 		C9B2E24B2B31A8560030DDFE /* GitInbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitInbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B2E24E2B31A8560030DDFE /* GitInboxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitInboxApp.swift; sourceTree = "<group>"; };
 		C9B2E2502B31A8560030DDFE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 		C9B2E25E2B31A85A0030DDFE /* GitInboxTests */ = {
 			isa = PBXGroup;
 			children = (
+				C91A681C2B31DD750030A650 /* FirstTests.swift */,
 			);
 			path = GitInboxTests;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 					};
 					C9B2E25A2B31A85A0030DDFE = {
 						CreatedOnToolsVersion = 15.1;
+						LastSwiftMigration = 1510;
 						TestTargetID = C9B2E24A2B31A8560030DDFE;
 					};
 				};
@@ -205,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C91A681D2B31DD750030A650 /* FirstTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +406,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L274662835;
@@ -410,6 +416,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = sergiu.GitInboxTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GitInbox.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GitInbox";
@@ -421,6 +428,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L274662835;

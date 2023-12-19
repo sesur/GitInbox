@@ -44,6 +44,7 @@
 		C9B2E2652B31A85A0030DDFE /* GitInboxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitInboxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B2E2692B31A85A0030DDFE /* GitInboxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitInboxUITests.swift; sourceTree = "<group>"; };
 		C9B2E26B2B31A85A0030DDFE /* GitInboxUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitInboxUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C9B2E2792B31C7960030DDFE /* GitInboxTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = GitInboxTests.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +75,7 @@
 		C9B2E2422B31A8560030DDFE = {
 			isa = PBXGroup;
 			children = (
+				C9B2E2792B31C7960030DDFE /* GitInboxTests.xctestplan */,
 				C9B2E24D2B31A8560030DDFE /* GitInbox */,
 				C9B2E25E2B31A85A0030DDFE /* GitInboxTests */,
 				C9B2E2682B31A85A0030DDFE /* GitInboxUITests */,

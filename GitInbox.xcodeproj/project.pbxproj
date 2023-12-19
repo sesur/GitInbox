@@ -11,7 +11,6 @@
 		C9B2E2512B31A8560030DDFE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2E2502B31A8560030DDFE /* ContentView.swift */; };
 		C9B2E2532B31A8590030DDFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9B2E2522B31A8590030DDFE /* Assets.xcassets */; };
 		C9B2E2562B31A8590030DDFE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9B2E2552B31A8590030DDFE /* Preview Assets.xcassets */; };
-		C9B2E2602B31A85A0030DDFE /* GitInboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2E25F2B31A85A0030DDFE /* GitInboxTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,9 +30,6 @@
 		C9B2E2522B31A8590030DDFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9B2E2552B31A8590030DDFE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C9B2E25B2B31A85A0030DDFE /* GitInboxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitInboxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C9B2E25F2B31A85A0030DDFE /* GitInboxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitInboxTests.swift; sourceTree = "<group>"; };
-		C9B2E2692B31A85A0030DDFE /* GitInboxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitInboxUITests.swift; sourceTree = "<group>"; };
-		C9B2E26B2B31A85A0030DDFE /* GitInboxUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitInboxUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C9B2E2792B31C7960030DDFE /* GitInboxTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = GitInboxTests.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,7 +57,6 @@
 				C9B2E2792B31C7960030DDFE /* GitInboxTests.xctestplan */,
 				C9B2E24D2B31A8560030DDFE /* GitInbox */,
 				C9B2E25E2B31A85A0030DDFE /* GitInboxTests */,
-				C9B2E2682B31A85A0030DDFE /* GitInboxUITests */,
 				C9B2E24C2B31A8560030DDFE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -97,18 +92,8 @@
 		C9B2E25E2B31A85A0030DDFE /* GitInboxTests */ = {
 			isa = PBXGroup;
 			children = (
-				C9B2E25F2B31A85A0030DDFE /* GitInboxTests.swift */,
 			);
 			path = GitInboxTests;
-			sourceTree = "<group>";
-		};
-		C9B2E2682B31A85A0030DDFE /* GitInboxUITests */ = {
-			isa = PBXGroup;
-			children = (
-				C9B2E2692B31A85A0030DDFE /* GitInboxUITests.swift */,
-				C9B2E26B2B31A85A0030DDFE /* GitInboxUITestsLaunchTests.swift */,
-			);
-			path = GitInboxUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,7 +205,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9B2E2602B31A85A0030DDFE /* GitInboxTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

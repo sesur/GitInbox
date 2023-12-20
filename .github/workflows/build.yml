@@ -10,7 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Setup Xcode version
-         run: xcrun simctl create 'iPhone 15' com.apple.CoreSimulator.SimDeviceType.iPhone-15 com.apple.CoreSimulator.SimRuntime.iOS-15-0 
+        uses: maxim-lobanov/setup-xcode@1.6.0
+        with:
+          xcode-version: '15.0.1'
       - name: Show current version of Xcode
         run: xcodebuild -version
       - name: Run tests

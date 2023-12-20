@@ -6,13 +6,11 @@ on:
 jobs:
   build:
     name: Build and tests
-    runs-on: macos-latest
+    runs-on: macos-13
     steps:
       - uses: actions/checkout@v4
       - name: Setup Xcode version
-        uses: maxim-labanov/setup-xcode@1.6.0
-        with:
-          xcode-version: '15.0.1'
+         run: xcrun simctl create 'iPhone 15' com.apple.CoreSimulator.SimDeviceType.iPhone-15 com.apple.CoreSimulator.SimRuntime.iOS-15-0 
       - name: Show current version of Xcode
         run: xcodebuild -version
       - name: Run tests

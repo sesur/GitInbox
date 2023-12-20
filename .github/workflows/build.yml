@@ -1,20 +1,19 @@
 name: Build
 
-on: 
-  workflow_dispatch: 
+on:
+  workflow_dispatch:
 
-
-jobs: 
-  build: 
+jobs:
+  build:
     name: Build and tests
     runs-on: macos-latest
-    steps: 
+    steps:
       - uses: actions/checkout@v4
       - name: Setup Xcode version
         uses: maxim-labanov/setup-xcode@1.6.0
-        with: 
+        with:
           xcode-version: '15.0.1'
-      - name: Show curret version of Xcode
+      - name: Show current version of Xcode
         run: xcodebuild -version
       - name: Run tests
         run: ./run_tests.sh

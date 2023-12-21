@@ -1,4 +1,4 @@
-
+[![Build](https://github.com/sesur/GitInbox/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/sesur/GitInbox/actions/workflows/build.yml)
 # GitInbox (exploring TDD in a SwiftUI)
 
 I’m writing a GitHub notifications viewer iOS app to explore TDD in a SwiftUI World. 

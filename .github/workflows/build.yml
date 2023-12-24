@@ -19,7 +19,7 @@ jobs:
 
     steps:
       - name: Setup Xcode version
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
         with:
           xcode-version: '15'
 

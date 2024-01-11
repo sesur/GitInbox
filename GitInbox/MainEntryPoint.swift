@@ -5,8 +5,8 @@ struct MainEntryPoint {
     static func main() {
         if NSClassFromString("XCTestCase") != nil {
             TestApp.main()
-        } else {
-            GitInboxApp.main()
+            return
         }
+        GitInboxApp.main()
     }
 }

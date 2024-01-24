@@ -18,11 +18,11 @@ jobs:
   main:
     name: main
     runs-on: macos-13
-    
-    - name: Checkout code
-      uses: actions/checkout@v4
       
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
     - uses: ./.github/workflows/lint.yml
 
     - uses: ./.github/workflows/build.yml

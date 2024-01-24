@@ -4,6 +4,9 @@ on:
   pull_request:
     paths:
       - '**/*.swift'
+  push:
+    branches:
+      - main
 
 jobs:
   swiftlint:

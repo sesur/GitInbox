@@ -16,7 +16,7 @@ concurrency:
     
 jobs:
   swiftlint:
-    runs-on: ubuntu-latest
+    runs-on: macos-13
 
     steps:
     - name: Checkout code

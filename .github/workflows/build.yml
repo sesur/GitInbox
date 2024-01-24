@@ -1,6 +1,6 @@
 # .github/workflows/build.yml
 
-name: build
+name: build and test
 
 on:
   workflow_dispatch:
@@ -10,7 +10,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  build and test:
     runs-on: macos-13
 
     steps:

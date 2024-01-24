@@ -1,0 +1,27 @@
+name: SwiftLint
+
+on:
+  pull_request:
+    paths:
+      - '**/*.swift'
+
+jobs:
+  swiftlint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Swift
+      uses: actions/setup-swift@latest
+
+    - name: Install SwiftLint
+      run: |
+        if ! swiftlint; then
+          echo "SwiftLint not installed. Installing..."
+          brew install swiftlint
+        fi
+
+    - name: Run SwiftLint
+      run: swiftlint

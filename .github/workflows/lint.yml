@@ -9,12 +9,12 @@ on:
   pull_request:
     branches: [ main ]
     types: [ opened ]
-    
+
 concurrency:
   # Cancel any in-progress workflows for this workflow/branch combination.
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
-    
+
 jobs:
   SwiftLint:
     runs-on: macos-13
@@ -33,5 +33,20 @@ jobs:
           brew install swiftlint
         fi
 
-    - name: Run SwiftLint
+    - name: Run SwiftLint locally
       run: swiftlint --fix
+
+    - name: Commit changes (optional)
+      run: |
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+        git add .
+        git diff-index --quiet HEAD || git commit -m "Auto-fix SwiftLint issues"
+      if: always()
+
+    - name: Push changes (optional)
+      run: git push origin main
+      if: always()
+
+    - name: Run SwiftLint on GitHub Actions
+      run: swiftlint

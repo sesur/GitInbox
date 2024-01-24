@@ -18,6 +18,7 @@ jobs:
   main:
     name: action_main
     runs-on: macos-13
+    needs: [lint, build]  # Dependencies on lint and build jobs
 
     steps:
     - name: Checkout code

@@ -1,6 +1,6 @@
 # .github/workflows/main.yml
 
-name: Build and SwiftLint
+name: action_main
 
 on:
   workflow_dispatch:
@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   main:
-    name: Build and SwiftLint
+    name: action_main
     runs-on: macos-13
 
     steps:

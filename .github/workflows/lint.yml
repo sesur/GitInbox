@@ -1,6 +1,6 @@
 # .github/workflows/lint.yml
 
-name: SwiftLint
+name: swiftLint
 
 on:
   workflow_dispatch:

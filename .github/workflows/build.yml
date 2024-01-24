@@ -1,6 +1,6 @@
 # .github/workflows/build.yml
 
-name: build_and_test
+name: Build_and_test
 
 on:
   workflow_dispatch:
@@ -16,7 +16,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build_and_test:
+  Build_and_test:
     runs-on: macos-13
 
     steps:

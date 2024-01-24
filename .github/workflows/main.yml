@@ -1,6 +1,6 @@
 # .github/workflows/main.yml
 
-name: action_main
+name: Action_main
 
 on:
   workflow_dispatch:
@@ -16,8 +16,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  main:
-    name: action_main
+  Main:
+    name: Action_main
     runs-on: macos-13
     needs: [lint, build]  # Dependencies on lint and build jobs
 

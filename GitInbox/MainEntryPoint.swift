@@ -9,7 +9,7 @@ struct MainEntryPoint {
         }
         GitInboxApp.main()
     }
-    
+
     private static func isProduction() -> Bool {
         return NSClassFromString("XCTestCase") == nil
     }

@@ -8,6 +8,11 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+    
+concurrency:
+  # Cancel any in-progress workflows for this workflow/branch combination.
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   swiftlint:

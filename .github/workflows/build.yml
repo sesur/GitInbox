@@ -1,6 +1,6 @@
-# .github/workflows/main.yml
+# .github/workflows/build.yml
 
-name: Build and SwiftLint
+name: Build
 
 on:
   workflow_dispatch:
@@ -9,17 +9,19 @@ on:
   pull_request:
     branches: [ main ]
 
-concurrency:
-  # Cancel any in-progress workflows for this workflow/branch combination.
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
-
 jobs:
-  build_and_swiftlint:
-    name: Build and SwiftLint
+  build:
     runs-on: macos-13
 
     steps:
-    - uses: ./.github/workflows/lint.yml
+    - name: Checkout code
+      uses: actions/checkout@v4
 
-    - uses: ./.github/workflows/build.yml
+    - name: Setup Xcode version
+      run: sudo xcode-select -s /Applications/Xcode_15.1.app/Contents/Developer
+
+    - name: Show current version of Xcode
+      run: xcodebuild -version
+
+    - name: Run tests
+      run: ./run_tests.sh

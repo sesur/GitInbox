@@ -1,6 +1,6 @@
 # .github/workflows/main.yml
 
-name: main
+name: Build and SwiftLint
 
 on:
   workflow_dispatch:
@@ -20,6 +20,11 @@ jobs:
     runs-on: macos-13
 
     steps:
-    - uses: ./.github/workflows/lint.yml
+    - name: Checkout code
+      uses: actions/checkout@v4
 
-    - uses: ./.github/workflows/build.yml
+    - name: Include SwiftLint Steps
+      run: echo "::include ./.github/workflows/lint.yml"
+
+    - name: Include Build Steps
+      run: echo "::include ./.github/workflows/build.yml"

@@ -1,6 +1,6 @@
 # .github/workflows/main.yml
 
-name: Build and SwiftLint
+name: main
 
 on:
   workflow_dispatch:
@@ -15,10 +15,13 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build_and_swiftlint:
-    name: Build and SwiftLint
+  main:
+    name: main
     runs-on: macos-13
-
+    
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
     steps:
     - uses: ./.github/workflows/lint.yml
 

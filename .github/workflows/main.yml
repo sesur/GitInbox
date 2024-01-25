@@ -16,17 +16,40 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  Main:
-    name: Action_main
+  LintJob:
+    name: SwiftLint
     runs-on: macos-13
-    needs: [lint, build]  # Dependencies on lint and build jobs
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Include SwiftLint Steps
-      run: echo "::include ./.github/workflows/lint.yml"
+      - name: Include SwiftLint Steps
+        run: echo "::include ./.github/workflows/lint.yml"
 
-    - name: Include Build Steps
-      run: echo "::include ./.github/workflows/build.yml"
+  Build:
+    name: Build
+    runs-on: macos-13
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Include SwiftLint Steps
+        run: echo "::include ./.github/workflows/build.yml"
+
+
+#  Main:
+#    name: Action_main
+#    runs-on: macos-13
+#    needs: [lint, build]  # Dependencies on lint and build jobs
+#
+#    steps:
+#    - name: Checkout code
+#      uses: actions/checkout@v4
+#
+#    - name: Include SwiftLint Steps
+#      run: echo "::include ./.github/workflows/lint.yml"
+#
+#    - name: Include Build Steps
+#      run: echo "::include ./.github/workflows/build.yml"

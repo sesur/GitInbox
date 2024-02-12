@@ -18,6 +18,9 @@ jobs:
   SwiftLint:
     runs-on: ubuntu-latest
     steps:
+      - name: Include SwiftLint Steps
+        run: echo "::include ./.github/workflows/lint.yml"
+
       - name: Check Failure Status
         if: ${{ github.event.workflow_run.conclusion == 'failure' }}
         run: |
@@ -27,9 +30,13 @@ jobs:
   Build:
     runs-on: ubuntu-latest
     steps:
+      - name: Include SwiftLint Steps
+        run: echo "::include ./.github/workflows/build.yml"
+
       - name: Check Success Status
         if: ${{ github.event.workflow_run.conclusion == 'success' }}
         run: echo 'The triggered workflow was successful.'
+
       - name: Check Failure Status
         if: ${{ github.event.workflow_run.conclusion == 'failure' }}
         run: |

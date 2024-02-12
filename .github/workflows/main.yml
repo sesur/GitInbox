@@ -54,12 +54,11 @@ jobs:
   Main:
     needs: [SwiftLint, Build]
     runs-on: ubuntu-latest
+    if: ${{ needs.SwiftLint.outcome == 'success' && needs.Build.outcome == 'success' }}
     steps:
       - name: Check Success Status
-        if: ${{ needs.SwiftLint.outcome == 'success' && needs.Build.outcome == 'success' }}
         run: echo 'The triggered workflow was successful.'
       - name: Check Failure Status
-        if: ${{ needs.SwiftLint.outcome == 'failure' || needs.Build.outcome == 'failure' }}
         run: |
           echo 'The triggered workflow failed.'
           exit 1

@@ -4,34 +4,62 @@ name: Action_main
 
 on:
   workflow_dispatch:
+  workflow_run:
+    workflows: [LintJob]
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-    types: [ opened ]
-    
+    types: [ completed ]
+
 concurrency:
   # Cancel any in-progress workflows for this workflow/branch combination.
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  LintJob:
+
+  SwiftLint:
+    on-failure:
     name: SwiftLint
-    runs-on: macos-13
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
 
     steps:
+      - run: |
+            echo 'The triggered workflow failed.'
+            exit 1
+
+    on-success:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - run: echo 'The triggered workflow was successful.'
       - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Include SwiftLint Steps
         run: echo "::include ./.github/workflows/lint.yml"
 
+
   Build:
+    on-failure:
     name: Build
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
 
     steps:
+      - run: |
+            echo 'The triggered workflow failed.'
+            exit 1
+    runs-on: ubuntu-latest
+
+    on-success:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
+    steps:
+      - run: echo 'The triggered workflow was successful.'
       - name: Checkout code
         uses: actions/checkout@v4
 

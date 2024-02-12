@@ -7,10 +7,10 @@ on:
   workflow_run:
     workflows: [LintJob]
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
-    types: [ completed ]
+    branches: [main]
+    types: [completed]
 
 concurrency:
   # Cancel any in-progress workflows for this workflow/branch combination.
@@ -18,66 +18,26 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-
   SwiftLint:
-    on-failure:
-    name: SwiftLint
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
-
     steps:
-      - run: |
-            echo 'The triggered workflow failed.'
-            exit 1
-
-    on-success:
-    runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
-    steps:
-      - run: echo 'The triggered workflow was successful.'
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Include SwiftLint Steps
-        run: echo "::include ./.github/workflows/lint.yml"
-
+      - name: Check Success Status
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
+        run: echo 'The triggered workflow was successful.'
+      - name: Check Failure Status
+        if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+        run: |
+          echo 'The triggered workflow failed.'
+          exit 1
 
   Build:
-    on-failure:
-    name: Build
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
-
     steps:
-      - run: |
-            echo 'The triggered workflow failed.'
-            exit 1
-    runs-on: ubuntu-latest
-
-    on-success:
-    runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
-
-    steps:
-      - run: echo 'The triggered workflow was successful.'
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Include SwiftLint Steps
-        run: echo "::include ./.github/workflows/build.yml"
-
-
-#  Main:
-#    name: Action_main
-#    runs-on: macos-13
-#    needs: [lint, build]  # Dependencies on lint and build jobs
-#
-#    steps:
-#    - name: Checkout code
-#      uses: actions/checkout@v4
-#
-#    - name: Include SwiftLint Steps
-#      run: echo "::include ./.github/workflows/lint.yml"
-#
-#    - name: Include Build Steps
-#      run: echo "::include ./.github/workflows/build.yml"
+      - name: Check Success Status
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
+        run: echo 'The triggered workflow was successful.'
+      - name: Check Failure Status
+        if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+        run: |
+          echo 'The triggered workflow failed.'
+          exit 1

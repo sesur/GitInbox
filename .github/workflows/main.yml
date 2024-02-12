@@ -3,7 +3,7 @@ name: Action_main
 on:
   workflow_dispatch:
   workflow_run:
-    workflows: [LintJob]
+    workflows: [LintJob, Build]
   push:
     branches: [main]
   pull_request:
@@ -18,6 +18,9 @@ jobs:
   SwiftLint:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: Include SwiftLint Steps
         uses: ./.github/workflows/lint.yml
 
@@ -30,8 +33,12 @@ jobs:
   Build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: Include Build Steps
-        uses: ./.github/workflows/build.yml
+        run: |
+          cat ./.github/workflows/build.yml
 
       - name: Check Success Status
         if: ${{ github.event.workflow_run.conclusion == 'success' }}
